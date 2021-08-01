@@ -32,16 +32,13 @@ namespace CityInfo.API
                 app.UseExceptionHandler();
             }
 
+            app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
             app.UseRouting();
             //app.UseMvc();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-               /* endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                    //throw new Exception("Exception");
-                });*/
+
             });
         }
     }
