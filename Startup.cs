@@ -1,3 +1,4 @@
+using CityInfo.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -19,6 +20,7 @@ namespace CityInfo.API
         {
             // services.AddMvc();
             services.AddControllers().AddXmlSerializerFormatters();
+            services.AddTransient<LocalMailService>();
             
             
            
