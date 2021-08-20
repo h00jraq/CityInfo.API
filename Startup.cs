@@ -23,11 +23,13 @@ namespace CityInfo.API
             // services.AddMvc();
             services.AddControllers().AddXmlSerializerFormatters();
             services.AddTransient<LocalMailService>();
-            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=CityInfoDB;Trusted_Connection=True;";
+            var connectionString = @"Server=(localdb)\mssqllocaldb;Database=CityInfoDB2;User Id=OBJECTIVITY\fdrzewiecki; Password = Ohkai6df;Trusted_Connection=True;";
             services.AddDbContext<CityInfoContext>(o =>
             {
                 o.UseSqlServer(connectionString);
             });
+
+            services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
 
 
